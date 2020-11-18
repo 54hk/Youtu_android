@@ -1,0 +1,3 @@
+rootProject.name='Youtu_android'
+include ':app'
+include ':lib'
