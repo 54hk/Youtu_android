@@ -1,17 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backGround">
+    android:background="@color/backGround"
+    android:fitsSystemWindows="true">
+
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_above="@+id/dy_loadingview"
         android:orientation="vertical" />
 
-    <include layout="@layout/douyin_layout_home_title" />
+    <com.me.youtu_android.douyin.widget.DYLoadingView
+        android:id="@+id/dy_loadingview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:padding="5dp"
+        app:color1="#FF00EEEE"
+        app:color2="#FFFF4040" />
+
+    <include
+        layout="@layout/douyin_layout_home_title" />
 
 
 </RelativeLayout>

@@ -93,7 +93,7 @@ public class StandardGSYVideoPlayer extends GSYVideoPlayer {
         super.init(context);
 
 
-
+        mStartButton.setVisibility(GONE);
         if (mBottomProgressDrawable != null) {
             mBottomProgressBar.setProgressDrawable(mBottomProgressDrawable);
         }
@@ -355,7 +355,7 @@ public class StandardGSYVideoPlayer extends GSYVideoPlayer {
     public GSYBaseVideoPlayer startWindowFullscreen(Context context, boolean actionBar, boolean statusBar) {
         GSYBaseVideoPlayer gsyBaseVideoPlayer = super.startWindowFullscreen(context, actionBar, statusBar);
         if (gsyBaseVideoPlayer != null) {
-            com.shuyu.gsyvideoplayer.video.StandardGSYVideoPlayer gsyVideoPlayer = (com.shuyu.gsyvideoplayer.video.StandardGSYVideoPlayer) gsyBaseVideoPlayer;
+            StandardGSYVideoPlayer gsyVideoPlayer = (StandardGSYVideoPlayer) gsyBaseVideoPlayer;
             gsyVideoPlayer.setLockClickListener(mLockClickListener);
             gsyVideoPlayer.setNeedLockFull(isNeedLockFull());
             initFullUI(gsyVideoPlayer);
@@ -433,7 +433,8 @@ public class StandardGSYVideoPlayer extends GSYVideoPlayer {
 
         setViewShowState(mTopContainer, VISIBLE);
         setViewShowState(mBottomContainer, INVISIBLE);
-        setViewShowState(mStartButton, VISIBLE);
+        //TODO
+        setViewShowState(mStartButton, INVISIBLE);
         setViewShowState(mLoadingProgressBar, INVISIBLE);
         setViewShowState(mThumbImageViewLayout, VISIBLE);
         setViewShowState(mBottomProgressBar, INVISIBLE);
@@ -471,7 +472,8 @@ public class StandardGSYVideoPlayer extends GSYVideoPlayer {
 
         setViewShowState(mTopContainer, VISIBLE);
         setViewShowState(mBottomContainer, VISIBLE);
-        setViewShowState(mStartButton, VISIBLE);
+        //TODO
+        setViewShowState(mStartButton, INVISIBLE);
         setViewShowState(mLoadingProgressBar, INVISIBLE);
         setViewShowState(mThumbImageViewLayout, INVISIBLE);
         setViewShowState(mBottomProgressBar, INVISIBLE);
@@ -489,6 +491,7 @@ public class StandardGSYVideoPlayer extends GSYVideoPlayer {
 
         setViewShowState(mTopContainer, VISIBLE);
         setViewShowState(mBottomContainer, VISIBLE);
+        //TODO
         setViewShowState(mStartButton, VISIBLE);
         setViewShowState(mLoadingProgressBar, INVISIBLE);
         setViewShowState(mThumbImageViewLayout, INVISIBLE);
@@ -759,7 +762,7 @@ public class StandardGSYVideoPlayer extends GSYVideoPlayer {
     /**
      * 全屏的UI逻辑
      */
-    private void initFullUI(com.shuyu.gsyvideoplayer.video.StandardGSYVideoPlayer
+    private void initFullUI(StandardGSYVideoPlayer
                                     standardGSYVideoPlayer) {
 
         if (mBottomProgressDrawable != null) {
@@ -878,7 +881,4 @@ public class StandardGSYVideoPlayer extends GSYVideoPlayer {
         startDismissControlViewTimer();
     }
 
-    public void setProgressBar(SeekBar.OnSeekBarChangeListener seekBarChangeListener) {
-//        mProgressBar.setOnSeekBarChangeListener(seekBarChangeListener);
-    }
 }
